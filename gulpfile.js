@@ -1,8 +1,6 @@
 const elixir = require('laravel-elixir');
 
-//require('laravel-elixir-vue-2');
-var spritesmith  = require('gulp.spritesmith');
-    pug = require('gulp-pug');
+require('./elixir-extensions')
 
 /*
  |--------------------------------------------------------------------------
@@ -15,29 +13,17 @@ var spritesmith  = require('gulp.spritesmith');
  |
  */
 
-gulp.task('sprite-retina', function () {
-  var data = gulp.src('resources/assets/img/sprites/*.png').pipe(spritesmith({
-    retinaSrcFilter: 'resources/assets/img/sprites/*-2x.png',
-    imgName: 'sprite-bitmap.png',
-    retinaImgName: 'sprite-bitmap-2x.png',
-    cssName: '_sprite.less'
-  }));
-  var imgStream = data.img.pipe(gulp.dest('public/css'));
-  var cssStream = data.css.pipe(gulp.dest('resources/assets/less'));
-  // return merge(imgStream, cssStream);
-});
-
-gulp.task('pug-to-html', function() {
-    return gulp.src('resources/assets/pug/*.pug')
-    .pipe(pug())
-    .pipe(gulp.dest('public/html'));
-});
-
 elixir((mix) => {
-    mix.task('sprite-retina')
+    mix.retinaSprites()
        .less('app.less')
        .scripts(['visual.js'])
        .copy('resources/assets/img/content', 'public/img/content')
-       .task('pug-to-html')
-       //.browserSync({proxy: 'birds.app'})
+       .pugToHtml()
+       .browserSync({
+          proxy: false,
+          server: {
+            baseDir: './public'
+          },
+          files: './public/**/*.*'
+        })
 });

@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"all.js","sourcesContent":["function accordeon(controller){\n  $(controller.data('accordeon')).toggleClass('active');\n}\n\n$(function (){\n  $('.accordeon__controller').click(function(){\n    accordeon($(this));\n  });\n});"]}

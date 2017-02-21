@@ -11,6 +11,17 @@ The large array-like variables contain all information about a single icon
 At the bottom of this section, we provide information about the spritesheet itself
 @spritesheet: width height image @spritesheet-sprites;
 */
+@checkbox-name: 'checkbox';
+@checkbox-x: 29px;
+@checkbox-y: 32px;
+@checkbox-offset-x: -29px;
+@checkbox-offset-y: -32px;
+@checkbox-width: 12px;
+@checkbox-height: 10px;
+@checkbox-total-width: 120px;
+@checkbox-total-height: 50px;
+@checkbox-image: 'sprite-bitmap.png';
+@checkbox: 29px 32px -29px -32px 12px 10px 120px 50px 'sprite-bitmap.png' 'checkbox';
 @logo-name: 'logo';
 @logo-x: 0px;
 @logo-y: 0px;
@@ -19,9 +30,42 @@ At the bottom of this section, we provide information about the spritesheet itse
 @logo-width: 120px;
 @logo-height: 32px;
 @logo-total-width: 120px;
-@logo-total-height: 32px;
+@logo-total-height: 50px;
 @logo-image: 'sprite-bitmap.png';
-@logo: 0px 0px 0px 0px 120px 32px 120px 32px 'sprite-bitmap.png' 'logo';
+@logo: 0px 0px 0px 0px 120px 32px 120px 50px 'sprite-bitmap.png' 'logo';
+@search-name: 'search';
+@search-x: 0px;
+@search-y: 32px;
+@search-offset-x: 0px;
+@search-offset-y: -32px;
+@search-width: 18px;
+@search-height: 18px;
+@search-total-width: 120px;
+@search-total-height: 50px;
+@search-image: 'sprite-bitmap.png';
+@search: 0px 32px 0px -32px 18px 18px 120px 50px 'sprite-bitmap.png' 'search';
+@tag-delete-name: 'tag-delete';
+@tag-delete-x: 18px;
+@tag-delete-y: 32px;
+@tag-delete-offset-x: -18px;
+@tag-delete-offset-y: -32px;
+@tag-delete-width: 11px;
+@tag-delete-height: 11px;
+@tag-delete-total-width: 120px;
+@tag-delete-total-height: 50px;
+@tag-delete-image: 'sprite-bitmap.png';
+@tag-delete: 18px 32px -18px -32px 11px 11px 120px 50px 'sprite-bitmap.png' 'tag-delete';
+@checkbox-2x-name: 'checkbox-2x';
+@checkbox-2x-x: 58px;
+@checkbox-2x-y: 64px;
+@checkbox-2x-offset-x: -58px;
+@checkbox-2x-offset-y: -64px;
+@checkbox-2x-width: 24px;
+@checkbox-2x-height: 20px;
+@checkbox-2x-total-width: 240px;
+@checkbox-2x-total-height: 100px;
+@checkbox-2x-image: 'sprite-bitmap-2x.png';
+@checkbox-2x: 58px 64px -58px -64px 24px 20px 240px 100px 'sprite-bitmap-2x.png' 'checkbox-2x';
 @logo-2x-name: 'logo-2x';
 @logo-2x-x: 0px;
 @logo-2x-y: 0px;
@@ -30,28 +74,56 @@ At the bottom of this section, we provide information about the spritesheet itse
 @logo-2x-width: 240px;
 @logo-2x-height: 64px;
 @logo-2x-total-width: 240px;
-@logo-2x-total-height: 64px;
+@logo-2x-total-height: 100px;
 @logo-2x-image: 'sprite-bitmap-2x.png';
-@logo-2x: 0px 0px 0px 0px 240px 64px 240px 64px 'sprite-bitmap-2x.png' 'logo-2x';
+@logo-2x: 0px 0px 0px 0px 240px 64px 240px 100px 'sprite-bitmap-2x.png' 'logo-2x';
+@search-2x-name: 'search-2x';
+@search-2x-x: 0px;
+@search-2x-y: 64px;
+@search-2x-offset-x: 0px;
+@search-2x-offset-y: -64px;
+@search-2x-width: 36px;
+@search-2x-height: 36px;
+@search-2x-total-width: 240px;
+@search-2x-total-height: 100px;
+@search-2x-image: 'sprite-bitmap-2x.png';
+@search-2x: 0px 64px 0px -64px 36px 36px 240px 100px 'sprite-bitmap-2x.png' 'search-2x';
+@tag-delete-2x-name: 'tag-delete-2x';
+@tag-delete-2x-x: 36px;
+@tag-delete-2x-y: 64px;
+@tag-delete-2x-offset-x: -36px;
+@tag-delete-2x-offset-y: -64px;
+@tag-delete-2x-width: 22px;
+@tag-delete-2x-height: 22px;
+@tag-delete-2x-total-width: 240px;
+@tag-delete-2x-total-height: 100px;
+@tag-delete-2x-image: 'sprite-bitmap-2x.png';
+@tag-delete-2x: 36px 64px -36px -64px 22px 22px 240px 100px 'sprite-bitmap-2x.png' 'tag-delete-2x';
 @spritesheet-width: 120px;
-@spritesheet-height: 32px;
+@spritesheet-height: 50px;
 @spritesheet-image: 'sprite-bitmap.png';
-@spritesheet-sprites: @logo;
-@spritesheet: 120px 32px 'sprite-bitmap.png' @spritesheet-sprites;
+@spritesheet-sprites: @checkbox @logo @search @tag-delete;
+@spritesheet: 120px 50px 'sprite-bitmap.png' @spritesheet-sprites;
 @retina-spritesheet-width: 240px;
-@retina-spritesheet-height: 64px;
+@retina-spritesheet-height: 100px;
 @retina-spritesheet-image: 'sprite-bitmap-2x.png';
-@retina-spritesheet-sprites: @logo-2x;
-@retina-spritesheet: 240px 64px 'sprite-bitmap-2x.png' @retina-spritesheet-sprites;
+@retina-spritesheet-sprites: @checkbox-2x @logo-2x @search-2x @tag-delete-2x;
+@retina-spritesheet: 240px 100px 'sprite-bitmap-2x.png' @retina-spritesheet-sprites;
 
 /*
 These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
 
 The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
 */
+@checkbox-group-name: 'checkbox';
+@checkbox-group: 'checkbox' @checkbox @checkbox-2x;
 @logo-group-name: 'logo';
 @logo-group: 'logo' @logo @logo-2x;
-@retina-groups: @logo-group;
+@search-group-name: 'search';
+@search-group: 'search' @search @search-2x;
+@tag-delete-group-name: 'tag-delete';
+@tag-delete-group: 'tag-delete' @tag-delete @tag-delete-2x;
+@retina-groups: @checkbox-group @logo-group @search-group @tag-delete-group;
 
 /*
 The provided classes are intended to be used with the array-like variables

@@ -1,0 +1,89 @@
+.filters
+	.wrapper
+		.filters__accordeon
+			.accordeon.accordeon_columnar.active#amenities-accordeon
+				.accordeon__controller(data-accordeon="#amenities-accordeon") Amenities
+				.accordeon__content
+					form.form
+						.form__group
+							label Amenities search
+							.search
+								.search__tags
+									.search__tag
+										.tag
+											.tag__name Air conditioner
+											.tag__delete
+									.search__tag
+										.tag
+											.tag__name Terrace
+											.tag__delete
+									.search__tag
+										.tag
+											.tag__name Fridge
+											.tag__delete
+								.search__input
+									input(type="text", placeholder="enter the names of amenities that you need in apartment")
+						.accordeon.active#popular-amenities-accordeon
+							.accordeon__controller(data-accordeon="#popular-amenities-accordeon") Popular amenities
+							.accordeon__content
+								.checkbox-group
+									.checkbox-group__items
+										.checkbox-group__item
+											input(type="checkbox")#pa-1
+											label(for="pa-1") Air conditioner
+										.checkbox-group__item
+											input(type="checkbox")#pa-2
+											label(for="pa-2") Computerr
+										.checkbox-group__item
+											input(type="checkbox")#pa-3
+											label(for="pa-3") Elevator
+										.checkbox-group__item
+											input(type="checkbox")#pa-4
+											label(for="pa-4") Free Transportation
+										.checkbox-group__item
+											input(type="checkbox")#pa-5
+											label(for="pa-5") Free wireless internet
+										.checkbox-group__item
+											input(type="checkbox")#pa-6
+											label(for="pa-6") Guarded parking
+						.checkbox-group.checkbox-group_bordered
+							.checkbox-group__header Apartment
+							.checkbox-group__items
+								.checkbox-group__item
+									input(type="checkbox")#ap-1
+									label(for="ap-1") Balcony
+								.checkbox-group__item
+									input(type="checkbox")#ap-2
+									label(for="ap-2") Fireplace
+								.checkbox-group__item
+									input(type="checkbox")#ap-3
+									label(for="ap-3") Floor heating
+								.checkbox-group__item
+									input(type="checkbox")#ap-4
+									label(for="ap-4") Game room
+								.checkbox-group__item
+									input(type="checkbox")#ap-5
+									label(for="ap-5") Terrace
+						.accordeon.active#kitchen-accordeon
+							.accordeon__controller(data-accordeon="#kitchen-accordeon") Kitchen
+							.accordeon__content
+								.checkbox-group
+									.checkbox-group__items
+										.checkbox-group__item
+											input(type="checkbox")#k-1
+											label(for="k-1") Blender
+										.checkbox-group__item
+											input(type="checkbox")#k-2
+											label(for="k-2") Coffee maker
+										.checkbox-group__item
+											input(type="checkbox")#k-3
+											label(for="k-3") Cooking hob
+										.checkbox-group__item
+											input(type="checkbox")#k-4
+											label(for="k-4") Dishwasher
+										.checkbox-group__item
+											input(type="checkbox")#k-5
+											label(for="k-5") Freezer
+										.checkbox-group__item
+											input(type="checkbox")#k-6
+											label(for="k-6") Fridge

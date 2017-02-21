@@ -1,0 +1,33 @@
+.checkbox-group{
+	&__items{
+		margin: 25px 0;
+		@media(min-width: @pad){
+			display: flex;
+			flex-wrap: wrap;
+			margin: 14px 0;
+		}
+	}
+	&__item{
+		margin: 12px 0;
+		@media(min-width: @pad){
+			flex-basis: 50%;
+		}
+		@media(min-width: @desktop){
+			flex-basis: 33.3%;
+		}
+	}
+	&__header{
+		color: @main-color;
+		margin: 28px 0 15px;
+	}
+
+	&:nth-last-child(1){
+		border-bottom: 0;
+	}
+
+	//Modify
+	&_bordered{
+		border-bottom: 1px solid lighten(@border-color, 10%);
+		border-top: 1px solid lighten(@border-color, 10%);
+	}
+}

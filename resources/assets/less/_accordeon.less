@@ -1,0 +1,80 @@
+.accordeon{
+	margin: 25px 0 13px;
+	//Elements
+	&__controller{
+		position: relative;
+		color: @main-color;
+		padding: 3px 30px;
+		&:before,
+		&:after{
+			&:extend(.pseudo);
+			transition: .2s ease;
+		}
+		&:before{
+			width: 18px;
+			height: 18px;
+			background: @main-color;
+			border-radius: 50%;
+			color: @white;
+			content: '—';
+			text-align: center;
+			font-size: 11px;
+			box-sizing: border-box;
+			padding-top: 2px;
+			left: 0;
+			top: 50%;
+			margin-top: -9px;
+			cursor: pointer;
+			font-weight: 400;
+		}
+		&:after{
+			width: 0;
+			height: 2px;
+			background: #fff;
+			left: 8px;
+			top: 50%;
+			margin-top: -1px;
+		}
+	}
+	&__content{
+		display: none;
+	}
+
+	//Modify
+	&_columnar{
+		@media(min-width: @pad){
+			display: flex;
+			align-items: flex-start;
+		}
+	}
+	&_columnar > &{
+		&__content{
+			padding-top: 15px;
+		}
+		@media(min-width: @pad){
+			&__controller{
+				width: 20%;
+			}
+			&__content{
+				width: 80%;
+				padding-top: 3px;
+			}
+		}
+	}
+
+	//JS States
+	&.active > &{
+		&__controller{
+			&:before{
+				transform: rotate(90deg);
+			}
+			&:after:extend(.pseudo){
+				width: 11px;
+				left: 3.5px;
+			}
+		}
+		&__content{
+			display: block;
+		}
+	}
+}

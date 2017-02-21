@@ -14,16 +14,16 @@ require('./elixir-extensions')
  */
 
 elixir((mix) => {
-    mix.retinaSprites()
-       .less('app.less')
-       .scripts(['visual.js'])
-       .copy('resources/assets/img/content', 'public/img/content')
-       .pugToHtml()
-       .browserSync({
-          proxy: false,
-          server: {
-            baseDir: './public'
-          },
-          files: './public/**/*.*'
-        })
+  mix.retinaSprites()
+     .less('app.less')
+     .scripts(['main.js'])
+     .copy('resources/assets/img/content', 'public/img/content')
+     .pugToHtml()
+     .browserSync({
+        proxy: false,
+        server: {
+          baseDir: './public'
+        },
+        files: './public/**/*.*'
+      })
 });

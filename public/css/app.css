@@ -438,13 +438,22 @@ textarea {
   font: inherit;
   /* 2 */
 }
-.pseudo {
+.pseudo,
+.accordeon__controller:before,
+.accordeon__controller:after,
+.accordeon.active > .accordeon__controller:after,
+.search:before,
+input[type="checkbox"] + label:before,
+input[type="checkbox"] + label:after {
   position: absolute;
   content: '';
   display: inline-block;
 }
 body {
   background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
 }
 .logo {
   display: inline-block;
@@ -456,7 +465,287 @@ body {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .logo {
     background-image: url(sprite-bitmap-2x.png);
-    background-size: 120px 32px;
+    background-size: 120px 50px;
+  }
+}
+.btn {
+  color: #fff;
+  background: #f3781e;
+  text-decoration: none;
+  letter-spacing: .5px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 11px 25px;
+  border-radius: 17px;
+  font-weight: 400;
+}
+.wrapper {
+  padding: 0 15px;
+}
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0 30px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+}
+.header {
+  padding: 15px 0;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 12px 0;
+  }
+}
+.header__button {
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .header__button {
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  .header__wrapper {
+    display: -webkit-box;
+    display: flex;
+  }
+}
+.accordeon {
+  margin: 25px 0 13px;
+}
+.accordeon__controller {
+  position: relative;
+  color: #57778e;
+  padding: 3px 30px;
+}
+.accordeon__controller:before,
+.accordeon__controller:after {
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+.accordeon__controller:before {
+  width: 18px;
+  height: 18px;
+  background: #57778e;
+  border-radius: 50%;
+  color: #fff;
+  content: '—';
+  text-align: center;
+  font-size: 11px;
+  box-sizing: border-box;
+  padding-top: 2px;
+  left: 0;
+  top: 50%;
+  margin-top: -9px;
+  cursor: pointer;
+  font-weight: 400;
+}
+.accordeon__controller:after {
+  width: 0;
+  height: 2px;
+  background: #fff;
+  left: 8px;
+  top: 50%;
+  margin-top: -1px;
+}
+.accordeon__content {
+  display: none;
+}
+@media (min-width: 768px) {
+  .accordeon_columnar {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: start;
+    align-items: flex-start;
+  }
+}
+.accordeon_columnar > .accordeon__content {
+  padding-top: 15px;
+}
+@media (min-width: 768px) {
+  .accordeon_columnar > .accordeon__controller {
+    width: 20%;
+  }
+  .accordeon_columnar > .accordeon__content {
+    width: 80%;
+    padding-top: 3px;
+  }
+}
+.accordeon.active > .accordeon__controller:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.accordeon.active > .accordeon__controller:after {
+  width: 11px;
+  left: 3.5px;
+}
+.accordeon.active > .accordeon__content {
+  display: block;
+}
+input[type=text] {
+  width: 100%;
+  border: 0;
+  color: #86888a;
+  outline: 0;
+  height: 36px;
+  box-sizing: border-box;
+  background: transparent;
+}
+label {
+  color: #57778e;
+}
+.search {
+  position: relative;
+  height: 38px;
+  width: 100%;
+  border: 1px solid #dbdee0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  padding-left: 45px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.search:before {
+  background-image: url(sprite-bitmap.png);
+  background-position: 0px -32px;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 15px;
+  margin-top: -9px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .search:before {
+    background-image: url(sprite-bitmap-2x.png);
+    background-size: 120px 50px;
+  }
+}
+.search__tags,
+.search__input,
+.search__tag {
+  display: inline-block;
+}
+.search__tags {
+  margin-right: 10px;
+}
+.search__input {
+  width: 350px;
+}
+.checkbox-group__items {
+  margin: 25px 0;
+}
+@media (min-width: 768px) {
+  .checkbox-group__items {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 14px 0;
+  }
+}
+.checkbox-group__item {
+  margin: 12px 0;
+}
+@media (min-width: 768px) {
+  .checkbox-group__item {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .checkbox-group__item {
+    flex-basis: 33.3%;
+  }
+}
+.checkbox-group__header {
+  color: #57778e;
+  margin: 28px 0 15px;
+}
+.checkbox-group:nth-last-child(1) {
+  border-bottom: 0;
+}
+.checkbox-group_bordered {
+  border-bottom: 1px solid #e8eaec;
+  border-top: 1px solid #e8eaec;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 35px;
+  color: #000;
+  padding: 4px 35px;
+  display: block;
+}
+input[type="checkbox"] + label:before {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid #cdd1d4;
+  left: 0;
+  top: 0;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+input[type="checkbox"] + label:after {
+  background-image: url(sprite-bitmap.png);
+  background-position: -29px -32px;
+  width: 12px;
+  height: 10px;
+  left: 5px;
+  top: 6px;
+  opacity: 0;
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  input[type="checkbox"] + label:after {
+    background-image: url(sprite-bitmap-2x.png);
+    background-size: 120px 50px;
+  }
+}
+input[type="checkbox"]:checked + label:before {
+  background: #57778e;
+  border-color: #57778e;
+}
+input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.tag {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #dbdee0;
+  border-radius: 3px;
+  padding: 6px 34px 6px 10px;
+  margin: 0 3px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.tag__delete {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  margin-top: -5px;
+  background-image: url(sprite-bitmap.png);
+  background-position: -18px -32px;
+  width: 11px;
+  height: 11px;
+  cursor: pointer;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .tag__delete {
+    background-image: url(sprite-bitmap-2x.png);
+    background-size: 120px 50px;
   }
 }
 
